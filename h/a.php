@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>อนัญญา ผลจันทร์ (ตาล)</title>
+<title>แพรวา ชาวดอน (แพร)</title>
 </head>
 
 <body>
