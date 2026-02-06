@@ -1,0 +1,23 @@
+<?php
+	include_once("../../../../Users/Administrator/Downloads/h/checklogin.php")
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>แพรวา ชาวดอน (แพร)</title>
+</head>
+
+<body>
+<h1>หน้าหลักแอดมิน</h1>
+
+<?php echo "แอดมิน: ". $_SESSION['a_name'];?><br>
+
+<ul>
+	<a href="../../../../Users/Administrator/Downloads/h/product.php"><li>จัดการสินค้า</li></a>
+    <a href="../../../../Users/Administrator/Downloads/h/orders.php"><li>จัดการออเดอร์</li></a>
+	<a href="../../../../Users/Administrator/Downloads/h/customer.php"><li>จัดการลูกค้า</li></a>
+    <a href="../../../../Users/Administrator/Downloads/h/logout.php"><li>ออกจากระบบ</li></a>
+</ul>
+</body>
+</html>
