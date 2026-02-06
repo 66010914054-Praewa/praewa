@@ -1,6 +1,5 @@
-
 <?php
-    session_start();
+	session_start();
 ?>
 <!doctype html>
 <html>
@@ -13,10 +12,10 @@
 <h1>แพรวา ชาวดอน (แพร)</h1>
 
 <?php
-    $_SESSION['name'] = "อนัญญา ผลจันทร์";
-    $_SESSION['nickname'] ="ตาล";
-    $_SESSION['p1'] = "โซฟา";
-    $_SESSION['p2'] = "ห่วงยาง"; 
+	$_SESSION['name'] = "แพรวา ชาวดอน ";
+	$_SESSION['nickname'] ="ตาล";
+	$_SESSION['p1'] = "โซฟา";
+	$_SESSION['p2'] = "ห่วงยาง"; 
 ?>
 </body>
 </html>

@@ -9,12 +9,13 @@
 </head>
 
 <body>
-<h1>e.php</h1>
+<h1>แพรวา ชาวดอน (แพร)</h1>
 
 <?php
-	unset($_SESSION['name']);
-	unset($_SESSION['p1']);
+	echo @$_SESSION['name']."<br>";
+	echo @$_SESSION['nickname']."<br>";
+	echo @$_SESSION['p1'] ."<br>";
+	echo @$_SESSION['p2'] ."<br>"; 
 ?>
-
 </body>
 </html>
