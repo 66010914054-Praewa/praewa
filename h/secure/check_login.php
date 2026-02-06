@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	if (entry($_SESSION['aid'])) {
-		echo "Access Denied" ;
-		echo "<meta http-equiv='refresh' content='4;url=index.php'>";
-		exit;
-	}
+    if(empty($_SESSION['aid'])){
+        echo "Access Denied";
+        echo "<meta http-equiv='refresh'content='3'; url=index.php>";
+        exit;
+    }
 ?>

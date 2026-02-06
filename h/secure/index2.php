@@ -1,5 +1,6 @@
 <?php
-	include_once("../../../../Users/Administrator/Downloads/h/checklogin.php")
+	include_once("checklogin.php");
+?>
 ?>
 <!doctype html>
 <html>
