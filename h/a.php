@@ -13,7 +13,7 @@
 
 <?php
 	$_SESSION['name'] = "แพรวา ชาวดอน ";
-	$_SESSION['nickname'] ="ตาล";
+	$_SESSION['nickname'] ="แพร";
 	$_SESSION['p1'] = "โซฟา";
 	$_SESSION['p2'] = "ห่วงยาง"; 
 ?>
