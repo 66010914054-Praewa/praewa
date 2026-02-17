@@ -7,7 +7,7 @@
 
 <body>
 
-<h1>งาน i - แพรวา ชาวดอน (แพร)</h1>
+<h1>งาน i --  แพรวา ชาวดอน (แพร)</h1>
 
 <form method="post" action="">
     ชื่อภาค <input type="text" name="rname" autofocus required>
