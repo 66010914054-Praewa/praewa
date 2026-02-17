@@ -9,7 +9,20 @@
 <h1> งาน i - แพรวา ชาวดอน (แพร)  </h1>
 
 <form method="post" action="">
-	ชื่อภาค <input type="text" name="rname" autofocus required>
+	ชื่อจังหวัด <input type="text" name="pname" autofocus required><br>
+    รูปภาพ <input type ="file" name="pname"autofocus required><br>
+
+    ภาค
+    <select name="rid"><?php
+include_once ("connectdb.php");
+$sql = "SELECT * FROM `regions`";
+$rs = mysqli_query($conn,$sql3);
+while ($data = mysqli_fetch_array($rs3)){
+?>
+        <option value=<?php echo $data3 ['p_id'] ; ?><?php echo $data3 ['p_name'] ;?></option>
+<?php}?>
+</select>
+<br>
     <button type="submit" name="Submit">บันทึก</button>
 </form> <br><br>
 <?php
@@ -39,7 +52,7 @@ while ($data = mysqli_fetch_array($rs)){
     <tr>
     	<td><?php echo $data ['p_id'] ; ?></td>
         <td><?php echo $data ['p_name'] ;?></td>
-        <td width="180" align="center"><a href="delete_region.php?id=<?php echo $data['r_id'];?>" on Click ="return confirm("ยืนยันการลบ");"<img  src ="images/1.jpg" width="20"></a></td>
+        <td><img src="images/<?php echo $data ['p_id'] ; ?>.jpg" width="140"></td> $data['p_id'];?>"onClick="return confirm()""
      </tr>
 <?php } ?>
 </table>
