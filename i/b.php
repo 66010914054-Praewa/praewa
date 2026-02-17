@@ -32,11 +32,12 @@ if(isset($_POST['Submit'])){
 	$pname = $_POST ['pname'];
 	$ext = pathinfo($_FILES['pimage']['name'],PATHINFO_EXTENSION);
     $rid = $_POST['rid'];
-    
+
     $sql2="INSERT INTO `provinces` VALUES (NULL,'{$pname}','{$ext}','{$rid}')";
 	mysqli_query($conn,$sql2) or die ("เพิ่มข้อมูลไม่ได้") ;
     $pid=mysqli_insert_id($conn);
-    copy($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
+    //copy($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
+    move_uploaded_file($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
 }
 ?>
 
@@ -45,21 +46,23 @@ if(isset($_POST['Submit'])){
 	<tr>
     <th>รหัสจังหวัด</th>
     <th>ชื่อจังหวัด</th>
+    <th>ชื่อภาค</th>
     <th>รูป</th>
     <th>ลบ</th>
     </tr>
 
 <?php
 include_once ("connectdb.php");
-$sql = "SELECT * FROM `regions`";
+$sql = "SELECT * FROM `provinces`";
+INNER JOIN 'regions' AS r ON p.r_id=r.r_id";
 $rs = mysqli_query($conn,$sql);
 while ($data = mysqli_fetch_array($rs)){
 ?>
     <tr>
-    	<td><?php echo $data ['p_id'] ; ?></td>
+    	<td><?php echo $data ['p_id'] ;?></td>
         <td><?php echo $data ['p_name'] ;?></td>
-        <td><img src="images/<?php echo $data ['p_id'] ; ?>.jpg" width="140"></td> $data['p_id'];?>"onClick="return confirm()""
-     </tr>
+        <td><?php echo $data['r_name'];?></td>
+        <td><img src="images/<?php echo $data ['p_id'] ; ?>.<?php echo $data['p_ext'];?> "width="80" align="center"><a href="delete_province.php?id=<?php echo $data['r_id'];?>"".jpg" width="140"></td> $data['p_id'];?>
 <?php } ?>
 </table>
 
