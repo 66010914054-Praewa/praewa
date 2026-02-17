@@ -28,9 +28,15 @@ while ($data = mysqli_fetch_array($rs3)){
 <?php
 if(isset($_POST['Submit'])){
 	include_once('connectdb.php');
-	$rname = $_POST ['rname'];
-	$sql2 = "INSERT INTO `regions` (`r_id`, `r_name`) VALUES (NULL, '{$_POST['rname']}')";
+
+	$pname = $_POST ['pname'];
+	$ext = pathinfo($_FILES['pimage']['name'],PATHINFO_EXTENSION);
+    $rid = $_POST['rid'];
+    
+    $sql2="INSERT INTO `provinces` VALUES (NULL,'{$pname}','{$ext}','{$rid}')";
 	mysqli_query($conn,$sql2) or die ("เพิ่มข้อมูลไม่ได้") ;
+    $pid=mysqli_insert_id($conn);
+    copy($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
 }
 ?>
 
@@ -38,7 +44,7 @@ if(isset($_POST['Submit'])){
 <table border="1">
 	<tr>
     <th>รหัสจังหวัด</th>
-    <th>ชื่อจังหวั</th>
+    <th>ชื่อจังหวัด</th>
     <th>รูป</th>
     <th>ลบ</th>
     </tr>
