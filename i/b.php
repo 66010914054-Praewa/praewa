@@ -25,7 +25,8 @@ if(isset($_POST['Submit'])){
 <table border="1">
 	<tr>
     <th>รหัสจังหวัด</th>
-    <th>ชื่อจังหวัด</th>
+    <th>ชื่อจังหวั</th>
+    <th>รูป</th>
     <th>ลบ</th>
     </tr>
 
@@ -38,7 +39,7 @@ while ($data = mysqli_fetch_array($rs)){
     <tr>
     	<td><?php echo $data ['p_id'] ; ?></td>
         <td><?php echo $data ['p_name'] ;?></td>
-        <td width="80" align="center"><a href="delete_region.php?id=<?php echo $data['r_id'];?>" on Click ="return confirm("ยืนยันการลบ");"<img  src ="images/delete.jpg" width="20"></a></td>
+        <td width="180" align="center"><a href="delete_region.php?id=<?php echo $data['r_id'];?>" on Click ="return confirm("ยืนยันการลบ");"<img  src ="images/1.jpg" width="20"></a></td>
      </tr>
 <?php } ?>
 </table>
