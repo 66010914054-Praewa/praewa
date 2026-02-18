@@ -1,55 +1,73 @@
-<!DOCTYPE html>
-<html lang="th">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>งาน K - แพรวา ชาวดอน 66010914054</title>
-    <style>
-        body { font-family: 'Tahoma', sans-serif; text-align: center; margin-top: 50px; }
-        .info { margin-bottom: 20px; font-size: 1.2em; }
-        
-        /* สไตล์ของปุ่ม */
-        .btn {
-            padding: 10px 25px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            margin: 10px;
-            color: white;
-            transition: 0.3s;
-        }
-        .btn-green { background-color: #28a745; } /* สีเขียว */
-        .btn-orange { background-color: #ffc107; color: black; } /* สีส้ม/เหลือง */
-        
-        .btn:hover { opacity: 0.8; }
-        
-        #display-area { margin-top: 30px; }
-        img { max-width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    </style>
+<meta charset="utf-8">
+<title>แพรวา ชาวดอน (แพร)</title>
+<style>
+    body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+
+    /* สไตล์ปุ่ม */
+    .btn-green {
+        background-color: #28a745; color: white; padding: 15px 30px;
+        border: none; cursor: pointer; border-radius: 5px; margin: 10px;
+    }
+    .btn-orange {
+        background-color: #ffc107; color: black; padding: 15px 30px;
+        border: none; cursor: pointer; border-radius: 5px; margin: 10px;
+    }
+
+    /* สไตล์ Modal (หน้าต่างแสดงรูป) */
+    .modal {
+        display: none; /* ปิดไว้ก่อน */
+        position: fixed; z-index: 1; left: 0; top: 0;
+        width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);
+    }
+    .modal-content {
+        margin: auto; display: block; width: 80%; max-width: 700px;
+        margin-top: 50px; border-radius: 10px;
+    }
+    /* ปุ่มปิด */
+    .close {
+        position: absolute; top: 15px; right: 35px;
+        color: #f1f1f1; fontSize: 40px; font-weight: bold; cursor: pointer;
+    }
+</style>
 </head>
+
 <body>
 
-    <div class="info">
-        <h1>งาน K</h1>
-        <p><strong>รหัสนิสิต:</strong> </p>
-        <p><strong>ชื่อ-นามสกุล:</strong> </p>
-    </div>
+    <h1>งาน k 66010914054 แพรวา ชาวดอน (แพร)</h1>
 
-    <button class="btn btn-green" onclick="showImage('me.jpg')">รูปตัวเอง</button>
-    <button class="btn btn-orange" onclick="showImage('teacher.jpg')">รูปอาจารย์ผู้สอน</button>
+    <button class="btn-green" onclick="showImage('images/1.jpg')">คลิก</button>
+    <button class="btn-orange" onclick="showImage('images/2.jpg')">คลิก</button>
 
-    <div id="display-area">
-        <p>คลิกปุ่มเพื่อแสดงรูปภาพ</p>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeImage()">&times; ปิดรูปภาพ</span>
+        <img class="modal-content" id="imgFull">
     </div>
 
     <script>
-        function showImage(fileName) {
-            const displayArea = document.getElementById('display-area');
-            // เปลี่ยนเนื้อหาใน div เป็นแท็ก img
-            displayArea.innerHTML = `<img src="${fileName}" alt="Loading...">`;
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("imgFull");
+
+        // ฟังก์ชันเปิดรูป
+        function showImage(src) {
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        // ฟังก์ชันปิดรูป (แล้วจะเห็นหน้าหลักเหมือนเดิม)
+        function closeImage() {
+            modal.style.display = "none";
+        }
+
+        // คลิกพื้นที่ว่างข้างนอกรูปเพื่อปิดก็ได้
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeImage();
+            }
         }
     </script>
 
 </body>
-</html>
+</html
