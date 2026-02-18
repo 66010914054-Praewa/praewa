@@ -38,8 +38,8 @@
 
     <h1>งาน k 66010914054 แพรวา ชาวดอน (แพร)</h1>
 
-    <button class="btn-green" onclick="showImage('images/1.jpg')">คลิก</button>
-    <button class="btn-orange" onclick="showImage('images/2.jpg')">คลิก</button>
+    <button class="btn-green" onclick="showImage('images/2.jpg')">คลิก</button>
+    <button class="btn-orange" onclick="showImage('images/1.jpg')">คลิก</button>
 
     <div id="myModal" class="modal">
         <span class="close" onclick="closeImage()">&times; ปิดรูปภาพ</span>
